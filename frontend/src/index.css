@@ -1,5 +1,6 @@
 body {
   background-color: var(--primary);
+  margin: 0;
 }
 
 code {
@@ -19,6 +20,13 @@ code {
 }
 
 /* ====== FONTS ====== */
+
+h2 {
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 h4 {
   font-family: "verdana-pro", sans-serif;
   font-weight: 700;
@@ -51,6 +59,7 @@ h4 {
 .border-box {
   box-sizing: border-box;
 }
+
 /* ====== NAV ====== */
 
 .nav-wrapper {
@@ -128,4 +137,18 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* ====== FOOTER ====== */
+
+.footer-wrapper {
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: var(--app-padding);
+}
+
+.social-icon {
+  fill: var(--seafoam);
+  transition-duration: 300ms;
+  width: 20px;
 }
