@@ -17,14 +17,31 @@ code {
   --primary: #FDFAF3;
   --secondary: #2E2B24;
   --seafoam: #DCEDCD;
+  --budding: #D8DF20;
 }
 
 /* ====== FONTS ====== */
+
+h1, h2, h3, h4, h5, h6, p {
+  color: var(--secondary);
+}
+
+h1 {
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 h2 {
   font-family: "verdana-pro", sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+
+h3 {
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 300;
+  font-style: italic;
 }
 
 h4 {
@@ -33,6 +50,24 @@ h4 {
   font-style: normal;
 }
 
+p {
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* ====== STYLES ====== */
+
+.hr-line {
+  background-color: var(--secondary);
+  height: 1px;
+}
+
+.square {
+  background-color: var(--budding);
+  height: 70px;
+  width:70px;
+}
 
 /* ====== FLEX ====== */
 
@@ -56,6 +91,10 @@ h4 {
   column-gap: 20px;
 }
 
+.r-gap-20 {
+  row-gap: 20px;
+}
+
 .border-box {
   box-sizing: border-box;
 }
@@ -68,7 +107,7 @@ h4 {
   width: 100vW;
 }
 
-.nav-wrapper a {
+.nav-wrapper a, h4 {
   color: var(--primary);
   text-decoration: none;
 }
@@ -143,12 +182,33 @@ input:checked + .slider:before {
 
 .footer-wrapper {
   background-color: var(--secondary);
-  color: var(--primary);
+
   padding: var(--app-padding);
+}
+
+.footer-wrapper h2 {
+  color: var(--primary);
 }
 
 .social-icon {
   fill: var(--seafoam);
   transition-duration: 300ms;
   width: 20px;
+}
+
+/* ====== PAGE ====== */
+
+.page-container {
+  padding: var(--app-padding);
+}
+
+.text-wrapper {
+  width: 40%;
+}
+
+.feature-image {
+  height: 70vH;
+  object-fit: cover;
+  object-position: 0% 0%; 
+  width: 100vW;
 }

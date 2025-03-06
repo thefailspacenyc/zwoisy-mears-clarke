@@ -5,7 +5,7 @@ import { BrowserRouter as Router,
     Link } from "react-router-dom";
 
 // === Pages
-
+import About from '../pages/About';
 
     function Nav() {
         
@@ -38,14 +38,14 @@ import { BrowserRouter as Router,
                     </div>
                     <div className="flex c-gap-20">
                         <a href="/about"><h4>zwoisy mears-clarke</h4></a>
-                        <a href="/projects"><h4>about me</h4></a>
+                        <a href="/about"><h4>about</h4></a>
                         <a href="/contact"><h4>projects</h4></a>
                         <a href="/contact"><h4>calendar</h4></a>
                         <a href="/contact"><h4>contact</h4></a>
                     </div>
                 </div>
                 <Routes>
-                    {/* <Route path="/" element={<Landing />} /> */}
+                    <Route path="/about" element={<About />} />
                 </Routes>
             </Router>
         );
