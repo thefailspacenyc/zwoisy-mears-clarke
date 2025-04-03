@@ -99,6 +99,9 @@ p {
   box-sizing: border-box;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
 /* ====== NAV ====== */
 
 .nav-wrapper {
@@ -211,4 +214,98 @@ input:checked + .slider:before {
   object-fit: cover;
   object-position: 0% 0%; 
   width: 100vW;
+}
+
+.full-height {
+  height: calc(var(--app-height) - 150px);
+}
+/* ====== CONTACT ====== */
+
+.contact-form {
+  padding-top: 10%;
+  width: 50%;
+}
+
+input {
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--secondary);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #4E4E4E;
+  font-size: 16px;
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  transition-duration: 300ms;
+  width: 40%;
+}
+
+input:focus {
+  border-bottom: 3px solid var(--seafoam);
+  color: var(--secondary);
+  outline: none;
+  transition-duration: 300ms;
+}
+
+textarea {
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--secondary);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #4E4E4E;
+  font-size: 16px;
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  height: 200px;
+  width: 100%;
+}
+
+textarea:focus {
+  border-bottom: 3px solid var(--seafoam);
+  color: var(--secondary);
+  outline: none;
+  transition-duration: 300ms;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid var(--secondary)
+}
+
+button {
+  background-color: var(--secondary);
+  border-radius: 0px;
+  border: none;
+  color: var(--primary);
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  transition-duration: 300ms;
+  width: 30%;
+}
+
+button:hover {
+  background-color: var(--seafoam);
+  color: var(--secondary);
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+select {
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--secondary);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #4E4E4E;
+  font-size: 16px;
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  width: 40%;
 }

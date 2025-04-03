@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_media_credits",
+  "info": {
+    "displayName": "Credits",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Credit": {
+      "type": "string"
+    },
+    "Creditee": {
+      "type": "blocks"
+    }
+  }
+}
