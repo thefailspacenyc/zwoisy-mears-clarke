@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Project_Title": {
+      "type": "string"
+    },
+    "Project_Description": {
+      "type": "blocks"
+    },
+    "Feature_Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Funding": {
+      "type": "blocks"
+    },
+    "Project_Media": {
+      "type": "dynamiczone",
+      "components": [
+        "media.video"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Project_Title"
+    },
+    "Credit": {
+      "displayName": "Credits",
+      "type": "component",
+      "repeatable": false,
+      "component": "media.credits"
+    }
+  }
+}

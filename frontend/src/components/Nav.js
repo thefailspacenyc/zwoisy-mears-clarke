@@ -6,6 +6,7 @@ import { BrowserRouter as Router,
 
 // === Pages
 import About from '../pages/About';
+import Contact from '../pages/Contact';
 
     function Nav() {
         
@@ -46,6 +47,8 @@ import About from '../pages/About';
                 </div>
                 <Routes>
                     <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+
                 </Routes>
             </Router>
         );
