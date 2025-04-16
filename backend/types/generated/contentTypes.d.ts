@@ -403,6 +403,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
+    description: '';
     displayName: 'Project';
     pluralName: 'projects';
     singularName: 'project';
@@ -414,7 +415,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Credit: Schema.Attribute.Component<'media.credits', false>;
+    Credit: Schema.Attribute.Component<'media.credits', true>;
     Feature_Image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -425,8 +426,11 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
+    Premiere_Year: Schema.Attribute.String;
     Project_Description: Schema.Attribute.Blocks;
-    Project_Media: Schema.Attribute.DynamicZone<['media.video']>;
+    Project_Media: Schema.Attribute.DynamicZone<
+      ['media.video', 'media.dgs-widget', 'media.text', 'media.gallery']
+    >;
     Project_Title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'Project_Title'>;

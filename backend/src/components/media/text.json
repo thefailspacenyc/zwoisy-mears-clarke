@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_media_texts",
+  "info": {
+    "displayName": "Text"
+  },
+  "options": {},
+  "attributes": {
+    "Rich_Text": {
+      "type": "blocks"
+    }
+  }
+}

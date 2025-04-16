@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 const Contact = () => {
 
     const form = useRef();
-    const [submitted, setSubmitted] = useState(false);
+    const [submitted, setSubmitted] = useState(true);
 
     const handleSubmit = () => {
        setTimeout(() => {
@@ -73,12 +73,6 @@ const Contact = () => {
                                 required
                             />
                         </div>
-                        <select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
                         <div>
                             <textarea 
                                 type="text"
