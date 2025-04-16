@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Project"
+    "displayName": "Project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,14 +18,15 @@
       "type": "blocks"
     },
     "Feature_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Funding": {
       "type": "blocks"
@@ -32,7 +34,10 @@
     "Project_Media": {
       "type": "dynamiczone",
       "components": [
-        "media.video"
+        "media.video",
+        "media.dgs-widget",
+        "media.text",
+        "media.gallery"
       ]
     },
     "slug": {
@@ -42,8 +47,11 @@
     "Credit": {
       "displayName": "Credits",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "media.credits"
+    },
+    "Premiere_Year": {
+      "type": "string"
     }
   }
 }

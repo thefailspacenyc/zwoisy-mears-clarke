@@ -12,6 +12,40 @@ export interface MediaCredits extends Struct.ComponentSchema {
   };
 }
 
+export interface MediaDgsWidget extends Struct.ComponentSchema {
+  collectionName: 'components_media_dgs_widgets';
+  info: {
+    displayName: 'DGS_Widget';
+    icon: 'command';
+  };
+  attributes: {
+    Video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface MediaGallery extends Struct.ComponentSchema {
+  collectionName: 'components_media_galleries';
+  info: {
+    displayName: 'Gallery';
+  };
+  attributes: {
+    Project_Gallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
+export interface MediaText extends Struct.ComponentSchema {
+  collectionName: 'components_media_texts';
+  info: {
+    displayName: 'Text';
+  };
+  attributes: {
+    Rich_Text: Schema.Attribute.Blocks;
+  };
+}
+
 export interface MediaVideo extends Struct.ComponentSchema {
   collectionName: 'components_media_videos';
   info: {
@@ -27,6 +61,9 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'media.credits': MediaCredits;
+      'media.dgs-widget': MediaDgsWidget;
+      'media.gallery': MediaGallery;
+      'media.text': MediaText;
       'media.video': MediaVideo;
     }
   }

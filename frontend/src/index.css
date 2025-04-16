@@ -18,6 +18,7 @@ code {
   --secondary: #2E2B24;
   --seafoam: #DCEDCD;
   --budding: #D8DF20;
+  --ochre: #BF7436;
 }
 
 /* ====== FONTS ====== */
@@ -51,6 +52,12 @@ h4 {
 }
 
 p {
+  font-family: "verdana-pro", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+ul {
   font-family: "verdana-pro", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -102,6 +109,15 @@ p {
 .flex-wrap {
   flex-wrap: wrap;
 }
+
+.width-75 {
+  width: 75%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
 /* ====== NAV ====== */
 
 .nav-wrapper {
@@ -172,6 +188,46 @@ input:checked + .slider:before {
   transform: translateX(55px);
 }
 
+.slider-dgs {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary);
+  border: 1px var(--ochre) solid;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider-dgs:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 0px;
+  bottom: 0px;
+  background-color: var(--ochre);
+  border: 1px var(--primary) solid;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider-dgs {
+  background-color: var(--seafoam);
+}
+
+input:focus + .slider-dgs {
+  box-shadow: 0 0 1px var(--budding);
+}
+
+input:checked + .slider-dgs:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
@@ -181,6 +237,13 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.slider-dgs.round {
+  border-radius: 34px;
+}
+
+.slider-dgs.round:before {
+  border-radius: 50%;
+}
 /* ====== FOOTER ====== */
 
 .footer-wrapper {
@@ -308,4 +371,48 @@ select {
   font-weight: 300;
   font-style: normal;
   width: 40%;
+}
+
+.dgs-label {
+  margin: 0;
+  color: var(--ochre);
+  padding-left: 10px;
+}
+
+
+.ochre-border-left {
+  border-left: 1px solid var(--ochre);
+}
+
+.ochre * {
+  color: var(--ochre) !important;
+}
+
+.padding-10 {
+  padding: 0px 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.credits > ul {
+  list-style: none;
+  padding-left: 0px;
+  font-style: italic;
+  margin-top: 0px;
+}
+
+.credits > p {
+  margin-top: 0px;
+}
+
+.project-header > h1{
+  margin-bottom: 0px;
+}
+
+.project-header > h3{
+  font-style: normal;
+  margin-top: 0px;
 }
