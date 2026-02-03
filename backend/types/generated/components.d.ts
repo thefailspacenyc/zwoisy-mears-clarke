@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AccessibilityAccessibilityIcons
+  extends Struct.ComponentSchema {
+  collectionName: 'components_accessibility_accessibility_icons';
+  info: {
+    displayName: 'Accessibility_Icons';
+  };
+  attributes: {
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface MediaCredits extends Struct.ComponentSchema {
   collectionName: 'components_media_credits';
   info: {
@@ -60,6 +71,7 @@ export interface MediaVideo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'accessibility.accessibility-icons': AccessibilityAccessibilityIcons;
       'media.credits': MediaCredits;
       'media.dgs-widget': MediaDgsWidget;
       'media.gallery': MediaGallery;

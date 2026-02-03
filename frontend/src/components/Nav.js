@@ -8,6 +8,9 @@ import { BrowserRouter as Router,
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import ProjectView from '../pages/ProjectView';
+import Home from '../pages/Home';
+import Calendar from '../pages/Calendar';
+import ProjectList from '../pages/ProjectList';
 
     function Nav() {
         
@@ -39,18 +42,20 @@ import ProjectView from '../pages/ProjectView';
                         </label>
                     </div>
                     <div className="flex c-gap-20">
-                        <a href="/about"><h4>zwoisy mears-clarke</h4></a>
+                        <a href="/"><h4>zwoisy mears-clarke</h4></a>
                         <a href="/about"><h4>about</h4></a>
                         <a href="/contact"><h4>projects</h4></a>
-                        <a href="/contact"><h4>calendar</h4></a>
+                        <a href="/calendar"><h4>calendar</h4></a>
                         <a href="/contact"><h4>contact</h4></a>
                     </div>
                 </div>
                 <Routes>
+                    <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/projects/:id" element={<ProjectView />} />
-
+                    <Route path="/projects" element={<ProjectList />} />
+                    <Route path="/calendar" element={<Calendar />} />
                 </Routes>
             </Router>
         );
