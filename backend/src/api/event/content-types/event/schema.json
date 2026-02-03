@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Event_Title": {
+      "type": "string"
+    },
+    "Start_Date": {
+      "type": "date"
+    },
+    "Date_Written": {
+      "type": "string"
+    },
+    "Time": {
+      "type": "string"
+    },
+    "Address": {
+      "type": "blocks"
+    },
+    "Icons": {
+      "displayName": "Accessibility_Icons",
+      "type": "component",
+      "repeatable": true,
+      "component": "accessibility.accessibility-icons"
+    },
+    "Event_Description": {
+      "type": "blocks"
+    }
+  }
+}
