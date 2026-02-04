@@ -12,7 +12,6 @@ import useFetch from '../useFetch';
         if (data) {
 
             about = data.data
-            console.log(about)
 
             return (
                 <div>

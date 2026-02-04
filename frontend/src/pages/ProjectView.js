@@ -1,5 +1,6 @@
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import useFetch from '../useFetch';
+import Widget from '../components/Widget';
 
 // === Pages
 
@@ -8,10 +9,26 @@ import useFetch from '../useFetch';
         const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/projects?pLevel`)
 
         let project = null;
+        let display = [];
+        let sections = null;
 
         if (data) {
             project = data.data[0]
+            sections = data.data[0].Project_Media;
+
             console.log(project)
+
+            for (let i = 0; i < sections.length; i ++) {
+                if (sections[i].__component === "media.dgs-widget") {
+                    display.push(<Widget data={sections[i]} />)
+                } else if (sections[i].__component === "project-components.text") {
+                    // display.push(<Text data={sections[i]} />)
+                } else if (sections[i].__component === "project-components.video") {
+                    // display.push(<Video data={sections[i]} />)
+                } else if (sections[i].__component === "project-components.gallery") {
+                    // display.push(<Gallery data={sections[i]} />)
+                } 
+            }
 
             return (
                 <div>
@@ -51,6 +68,13 @@ import useFetch from '../useFetch';
                                     <BlocksRenderer content={ project.Funding } />
                                 </div>
                             </div>
+                        </div>
+                        <div>
+                            {display.map((section, index) => 
+                                <div key={ index }>
+                                    { section }
+                                </div>
+                            )}
                         </div>
                         <div className="square"></div>
                         <div className="hr-line"></div>

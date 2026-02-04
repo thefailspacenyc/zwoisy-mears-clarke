@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 const Contact = () => {
 
     const form = useRef();
-    const [submitted, setSubmitted] = useState(true);
+    const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = () => {
        setTimeout(() => {
@@ -97,7 +97,7 @@ const Contact = () => {
             </div>
             <div>
                 <div className="hr-line"></div>
-                <h1 className="page-title bubblegum">Contact</h1>
+                <h1 className="page-title">Contact</h1>
                 <div className="hr-line"></div>
             </div>
         </div>
