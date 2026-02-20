@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_mediums",
+  "info": {
+    "singularName": "project-medium",
+    "pluralName": "project-mediums",
+    "displayName": "Project Medium"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project",
+      "mappedBy": "project_medium"
+    }
+  }
+}

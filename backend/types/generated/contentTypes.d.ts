@@ -469,6 +469,35 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiProjectMediumProjectMedium
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'project_mediums';
+  info: {
+    displayName: 'Project Medium';
+    pluralName: 'project-mediums';
+    singularName: 'project-medium';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-medium.project-medium'
+    > &
+      Schema.Attribute.Private;
+    projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
@@ -499,6 +528,10 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     Project_Description: Schema.Attribute.Blocks;
     Project_Media: Schema.Attribute.DynamicZone<
       ['media.video', 'media.dgs-widget', 'media.text', 'media.gallery']
+    >;
+    project_medium: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::project-medium.project-medium'
     >;
     Project_Title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
@@ -1021,6 +1054,7 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::event.event': ApiEventEvent;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::project-medium.project-medium': ApiProjectMediumProjectMedium;
       'api::project.project': ApiProjectProject;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
