@@ -473,6 +473,7 @@ export interface ApiProjectMediumProjectMedium
   extends Struct.CollectionTypeSchema {
   collectionName: 'project_mediums';
   info: {
+    description: '';
     displayName: 'Project Medium';
     pluralName: 'project-mediums';
     singularName: 'project-medium';
@@ -490,6 +491,7 @@ export interface ApiProjectMediumProjectMedium
       'api::project-medium.project-medium'
     > &
       Schema.Attribute.Private;
+    Medium: Schema.Attribute.String;
     projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
