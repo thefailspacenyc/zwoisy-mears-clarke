@@ -52,6 +52,12 @@
     },
     "Premiere_Year": {
       "type": "string"
+    },
+    "project_medium": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project-medium.project-medium",
+      "inversedBy": "projects"
     }
   }
 }
