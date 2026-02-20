@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project-medium",
     "pluralName": "project-mediums",
-    "displayName": "Project Medium"
+    "displayName": "Project Medium",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,9 @@
       "relation": "oneToMany",
       "target": "api::project.project",
       "mappedBy": "project_medium"
+    },
+    "Medium": {
+      "type": "string"
     }
   }
 }
